@@ -1,17 +1,24 @@
 Bu kod, bir makine öğrenimi modelinin nasıl oluşturulacağını, eğitileceğini ve yeni veriler üzerinde tahminler yapılacağını adım adım açıklar. İşlemler şu şekildedir:
 
-1. **Gerekli Kütüphanelerin İçe Aktarılması**: İlk adımda, veri işleme ve modelleme için gerekli olan `pandas`, `sklearn` ve `tensorflow` gibi kütüphaneler içe aktarılır.
+1. **Gerekli Kütüphanelerin İçe Aktarılması**:
+İlk adımda, veri işleme ve modelleme için gerekli olan `pandas`, `sklearn` ve `tensorflow` gibi kütüphaneler içe aktarılır.
 
-2. **Ön İşleme Pipeline'ının Oluşturulması**: `create_preprocessing_pipeline` fonksiyonu, veri ön işleme adımlarını otomatize eden bir pipeline oluşturur. Bu pipeline, kategorik verileri one-hot encode eder ve sayısal verileri standartlaştırır.
+2. **Ön İşleme Pipeline'ının Oluşturulması**:
+ `create_preprocessing_pipeline` fonksiyonu, veri ön işleme adımlarını otomatize eden bir pipeline oluşturur. Bu pipeline, kategorik verileri one-hot encode eder ve sayısal verileri standartlaştırır.
 
-3. **Modelin Oluşturulması**: `create_and_compile_model` fonksiyonu, bir sinir ağı modeli oluşturur. Bu model, giriş katmanı, iki gizli katman ve bir çıkış katmanından oluşur. Model, ikili sınıflandırma görevi için `sigmoid` aktivasyon fonksiyonu ve `binary_crossentropy` kayıp fonksiyonu kullanarak derlenir.
+3. **Modelin Oluşturulması**:
+`create_and_compile_model` fonksiyonu, bir sinir ağı modeli oluşturur. Bu model, giriş katmanı, iki gizli katman ve bir çıkış katmanından oluşur. Model, ikili sınıflandırma görevi için `sigmoid` aktivasyon fonksiyonu ve `binary_crossentropy` kayıp fonksiyonu kullanarak derlenir.
 
-4. **Veri Yükleme ve Ön İşleme**: `load_and_preprocess_data` fonksiyonu, veri setini yükler ve hedef değişken ile özellikleri ayırır. Daha sonra, ön işleme pipeline'ı kullanılarak veriler işlenir.
+4. **Veri Yükleme ve Ön İşleme**:
+`load_and_preprocess_data` fonksiyonu, veri setini yükler ve hedef değişken ile özellikleri ayırır. Daha sonra, ön işleme pipeline'ı kullanılarak veriler işlenir.
 
-5. **Model Eğitimi ve Değerlendirme**: `train_and_evaluate_model` fonksiyonu, modeli eğitir ve test veri seti üzerinde modelin performansını değerlendirir. Modelin doğruluğu ekrana yazdırılır.
+5. **Model Eğitimi ve Değerlendirme**:
+ `train_and_evaluate_model` fonksiyonu, modeli eğitir ve test veri seti üzerinde modelin performansını değerlendirir. Modelin doğruluğu ekrana yazdırılır.
 
-6. **Yeni Veri Üzerinde Tahmin Yapma**: `predict_new_data` fonksiyonu, eğitilmiş modeli kullanarak yeni veri seti üzerinde tahminler yapar. Tahminler, yeni veri setine eklenir ve sonuçlar `tahminlerYeni.csv` dosyasına kaydedilir.
+6. **Yeni Veri Üzerinde Tahmin Yapma**:
+ `predict_new_data` fonksiyonu, eğitilmiş modeli kullanarak yeni veri seti üzerinde tahminler yapar. Tahminler, yeni veri setine eklenir ve sonuçlar `tahminlerYeni.csv` dosyasına kaydedilir.
 
-7. **Ana Akış**: Kodun bu bölümü, yukarıdaki adımları sırasıyla uygular. Öncelikle, kategorik ve sayısal özellikler belirlenir. Ardından, veri yükleme ve ön işleme, model eğitimi ve değerlendirme, ve yeni veri üzerinde tahmin yapma işlemleri gerçekleştirilir.
+7. **Ana Akış**:
+ Kodun bu bölümü, yukarıdaki adımları sırasıyla uygular. Öncelikle, kategorik ve sayısal özellikler belirlenir. Ardından, veri yükleme ve ön işleme, model eğitimi ve değerlendirme, ve yeni veri üzerinde tahmin yapma işlemleri gerçekleştirilir.
 
 Bu adımlar, bir makine öğrenimi projesinin temel bileşenlerini ve iş akışını temsil eder.
