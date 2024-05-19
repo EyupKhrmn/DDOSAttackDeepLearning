@@ -6,6 +6,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.pipeline import Pipeline
 from tensorflow.keras.layers import Dense
 from tensorflow.keras import Sequential
+import matplotlib.pyplot as plt
 
 def create_preprocessing_pipeline(categorical_features, numeric_features):
     column_transformer = ColumnTransformer(transformers=[
@@ -44,13 +45,14 @@ def train_and_evaluate_model(model, X_train, y_train, X_test, y_test):
     loss, accuracy = model.evaluate(X_test, y_test)
     print(f'Test Accuracy: {accuracy*100:.2f}%')
 
+
 def predict_new_data(model, pipeline, filepath):
     new_data = pd.read_csv(filepath)
     new_data_transformed = pipeline.transform(new_data)
     predictions = model.predict(new_data_transformed)
     predictions = (predictions > 0.5).astype(int)
     new_data['IsDDoS'] = predictions
-    new_data.to_csv('tahminlerYeni.csv', index=False)
+    new_data.to_csv('hebele.csv', index=False)
 
 if __name__ == "__main__":
     X, y = load_and_preprocess_data('CSharpDDosAttackYeni.csv')
